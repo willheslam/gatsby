@@ -10,11 +10,10 @@ const basicNav = css`
   display: flex;
   position: fixed;
   top: 0;
-  align-items: center;
+  align-items: center; /* aligned center vertically */
   color: ${colors.primary};
   background-color: ${colors.secondary};
   margin: 0;
-  width: 100%;
   list-style-type: none;
   -webkit-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 1);
   -moz-box-shadow: 0px 1px 10px 0px rgba(0, 0, 0, 1);
@@ -27,7 +26,6 @@ const basicNav = css`
     display: flex;
     margin: 0 auto;
     padding: 0;
-    width: 1200px;
   }
 `;
 
@@ -44,11 +42,12 @@ const fullNav = css`
   }
   & ul div {
     display: flex;
-    justify-content: flex-end;
-    margin-left: auto;
+    margin-right: auto;
+    width: 800px;
+    justify-content: space-around;
 
     & li {
-      margin-left: 1.25rem;
+      margin-right: 1.25rem;
     }
   }
 
@@ -65,7 +64,7 @@ const mobileNav = css`
   }
 
   & li:last-child {
-    margin-left: auto;
+    margin-right: auto;
     font-weight: 600;
     cursor: pointer;
   }
@@ -138,23 +137,27 @@ class Navigation extends Component {
       <nav>
         <Box width="100%" px={[3, 3, 4]} className={fullNav}>
           <ul>
-            <li>Gatsbythemes.com starter</li>
             <div>
               <li>
                 <Link to="/">Home</Link>
               </li>
               <li>
-                <Link to="/about">About Us</Link>
+                <Link to="/map">Map</Link>
               </li>
               <li>
-                <Link to="/blog">Blog</Link>
+                <Link to="/about">Login</Link>
+              </li>
+              <li>
+                <Link to="/blog">Register a find</Link>
+              </li>
+              <li>
+                <Link to="/contact-us">Contact us</Link>
               </li>
             </div>
           </ul>
         </Box>
         <Box width="100%" px={[3, 3, 4]} className={mobileNav}>
           <ul>
-            <li>Gatsbythemes.com starter</li>
             <li>
               <div
                 onClick={this.toggleNav}

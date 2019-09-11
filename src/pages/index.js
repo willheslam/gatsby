@@ -32,8 +32,20 @@ export default ({ data }) => {
               </Link>
             </Box>
           </Flex>
+
+          <Flex justifyContent="center" wrap={['wrap', 'wrap', 'nowrap']}>
+            <Box m={[1]} width={[1, 1 / 2, 1 / 4]}>
+              <Link to="/about">
+                <ButtonPrimary>About</ButtonPrimary>
+              </Link>
+            </Box>
+            <Box m={[1]} width={[1, 1 / 2, 1 / 4]}>
+                <image>About</image>
+            </Box>
+          </Flex>
         </Box>
       </Box>
+
       <Box bg={colors.primary} py={[3, 3, 4]}>
         <Box
           width={[1, 1, '1200px']}
@@ -41,6 +53,13 @@ export default ({ data }) => {
           px={[3, 3, 0]}
           color={colors.secondary}
         >
+        <ul>
+        <li>image 1</li>
+        <li>image 2</li>
+        <li>image 3</li>
+        <li>image 4</li>
+        <li>image 5</li>
+        </ul>
           <h1>This could be another section</h1>
           <p>With another text object</p>
         </Box>
