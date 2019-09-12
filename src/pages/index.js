@@ -18,18 +18,19 @@ export default ({ data }) => {
   return (
     <PageWrapper>
       {/* this is the home page box with title and information */}
-      <Box bg={colors.primary}>
-        <Box
-          width={[1, 1, '800px']}
-          m={['3.5rem 0', '3.5rem 0', '3.5rem auto']}
-          px={[3, 3, 0]}
+      <Flex justifyContent="center">
+        <Box 
+          width={[1, '80%', '70%']}
+          bg="pink"
+          mx={['3.5rem 0', '3.5rem 0', '3.5rem 0']}
+          my="100px"
+          px={[3, 3, 5]}
           color={colors.secondary}
-          textAlign="center"
-        >
-        <h1>{myData.title}</h1>
-        <p>{myData.aboutText}</p>
+          textAlign="center">
+          <h1>{myData.title}</h1>
+          <p>{myData.aboutText}</p>
         </Box>
-      </Box>
+      </Flex>
 
       <Box bg={colors.primary} pb={[4]}>
         <Flex justifyContent="center" wrap={['wrap', 'nowrap', 'nowrap']}>
