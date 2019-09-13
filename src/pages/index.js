@@ -25,7 +25,7 @@ export default ({ data }) => {
           Tag="section"
           className={imgStyle}
           fluid={imageData.fluid}
-          backgroundColor={`#040e18`}
+          backgroundColor={`#FFFFFF`}
           padding="20px"
         >
         <Box 
@@ -86,7 +86,7 @@ export default ({ data }) => {
 
 export const query = graphql`
 query {
-  file(relativePath: { eq: "arts-council.png" }) {
+  file(relativePath: { eq: "map.jpeg" }) {
     childImageSharp {
       fluid(maxWidth: 1000) {
         ...GatsbyImageSharpFluid

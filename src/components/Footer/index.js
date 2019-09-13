@@ -10,7 +10,7 @@ import media from '../../utils/media';
 const footerStyle = css`
   overflow: hidden;
   padding: 2rem 0;
-  background-color: ${colors.accent};
+  background-color: ${colors.secondary};
   color: rgba(255, 255, 255, 0.5);
   text-align: center;
 
@@ -87,13 +87,13 @@ const Footer = ({ name, facebook, instagram, twitter, email }) => (
   <div className={footerStyle}>
     <Box width="1200px" m="0 auto" p={[3, 3, 4, 0]} align="left" color="white">
       <Flex wrap={['wrap', 'wrap', 'nowrap']} justifyContent="space-between">
-        <Box width={[1, 1, 1 / 3]}>
+        {/* <Box width={[1, 1, 1 / 3]}>
           <Wrapper>
             <div>
               <p>{name}</p>
             </div>
           </Wrapper>
-        </Box>
+        </Box> */}
         <Box width={[1, 1, 1 / 3]}>
           <Wrapper>
             <ul className={ulStyle}>
@@ -152,9 +152,6 @@ const Footer = ({ name, facebook, instagram, twitter, email }) => (
         </Box>
       </Flex>
     </Box>
-    <Box px={[3, 3, 1]} align="center">
-      <p>{`Copyright © 2019 ${name}. All rights reserved.`}</p>
-    </Box>
   </div>
 );
 
@@ -167,7 +164,7 @@ Footer.propTypes = {
 };
 
 Footer.defaultProps = {
-  name: 'Gatbsythemes.com starter',
+  // name: 'Gatbsythemes.com starter',
   facebook: 'https://facebook.com',
   twitter: 'https://twitter.com',
   instagram: 'https://instagram',
