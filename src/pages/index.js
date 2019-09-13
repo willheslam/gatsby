@@ -7,6 +7,8 @@ import PageWrapper from '../components/PageWrapper';
 import colors from '../utils/colors';
 import ButtonPrimary, { ButtonSecondary } from '../components/Buttons';
 import { css } from 'react-emotion';
+import BackgroundImage from 'gatsby-background-image';
+
 
 const imgStyle = css`
   border-radius: 5px;
@@ -19,17 +21,24 @@ export default ({ data }) => {
     <PageWrapper>
       {/* this is the home page box with title and information */}
       <Flex justifyContent="center">
+      <BackgroundImage
+          Tag="section"
+          className={imgStyle}
+          fluid={imageData.fluid}
+          backgroundColor={`#040e18`}
+          padding="20px"
+        >
         <Box 
           width={[1, '80%', '70%']}
           bg="pink"
-          mx={['3.5rem 0', '3.5rem 0', '3.5rem 0']}
-          my="100px"
+          m={['3.5rem 0', '3.5rem 0', '5.5rem auto']}
           px={[3, 3, 5]}
           color={colors.secondary}
           textAlign="center">
           <h1>{myData.title}</h1>
           <p>{myData.aboutText}</p>
         </Box>
+        </BackgroundImage>
       </Flex>
 
       <Box bg={colors.primary} pb={[4]}>

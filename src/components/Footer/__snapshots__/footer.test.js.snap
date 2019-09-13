@@ -171,12 +171,5 @@ exports[`renders correctly 1`] = `
       </div>
     </div>
   </div>
-  <div
-    className="css-swbi7v emotion-1"
-  >
-    <p>
-      Copyright © 2019 Gatbsythemes.com starter. All rights reserved.
-    </p>
-  </div>
 </div>
 `;

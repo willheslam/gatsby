@@ -34,6 +34,8 @@ module.exports = {
         trackingId: ``
       }
     },
+    'gatsby-background-image',
+    'gatsby-background-image-es5',
     'gatsby-transformer-remark',
     'gatsby-transformer-json',
     'gatsby-transformer-yaml',
