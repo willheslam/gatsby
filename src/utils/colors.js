@@ -1,14 +1,9 @@
 const colors = {
-  example1: {
-    primary: '#f1f1f0',
-    secondary: '#f1f1f0',
-    accent: '#333'
-  },
-  example2: {
+  theme: {
     primary: '#f1f1f0',
     secondary: '#243446',
     accent: '#333'
   }
 };
 
-export default colors.example2;
+export default colors.theme;

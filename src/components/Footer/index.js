@@ -86,7 +86,7 @@ const svgStyles = css`
 
 const Footer = ({ name, facebook, instagram, twitter, email }) => (
   <div className={footerStyle}>
-    <Box width="1200px" m="0 auto" p={[3, 3, 4, 0]} align="left" color="#f1f1f0">
+    <Box width="1200px" m="0 auto" p={[3, 3, 4, 3]} align="left" color="#f1f1f0">
       <Flex wrap={['wrap', 'wrap', 'nowrap']} justifyContent="space-between">
         {/* <Box width={[1, 1, 1 / 3]}>
           <Wrapper>

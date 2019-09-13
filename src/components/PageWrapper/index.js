@@ -32,6 +32,9 @@ injectGlobal`
     line-height: 1.5;
     text-align: justify;
   }
+  h5.button {
+      color: ${colors.primary}
+    }
 `;
 /* eslint-enable */
 

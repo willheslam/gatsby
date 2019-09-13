@@ -15,7 +15,7 @@ const buttonPrimary = css`
   transition: all 0.3s ease;
 
   &:hover {
-    background-color: transparent;
+    background-color: ${colors.primary};
     color: ${colors.secondary};
     cursor: pointer;
   }
