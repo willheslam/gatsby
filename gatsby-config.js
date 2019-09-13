@@ -34,6 +34,18 @@ module.exports = {
         trackingId: ``
       }
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Cinzel`,
+            subsets: [`latin`],
+            variants: [`400`, `700`]
+          }
+        ],
+      },
+    },
     'gatsby-background-image',
     'gatsby-background-image-es5',
     'gatsby-transformer-remark',

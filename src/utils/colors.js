@@ -1,6 +1,6 @@
 const colors = {
   example1: {
-    primary: '#416270',
+    primary: '#A49AA0',
     secondary: '#fff',
     accent: '#333'
   },

@@ -10,12 +10,7 @@ import colors from '../../utils/colors';
 import normalize from 'normalize.css';
 injectGlobal`
   * {
-      font-family: -apple-system, BlinkMacSystemFont,
-             'avenir next', avenir,
-             'helvetica neue', helvetica,
-             roboto, noto,
-             'segoe ui', arial,
-             sans-serif;
+      font-family: 'cinzel', serif;
       box-sizing: border-box;
   };
   a {

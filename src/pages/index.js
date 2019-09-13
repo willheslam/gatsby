@@ -72,7 +72,7 @@ export default ({ data }) => {
           <Box m={[3]} width={[ "90px" , "130px", "130px"]}>
             <Img
             className={imgStyle}
-            alt="L"
+            alt="Love Music Help Muscians UK Logo"
             fluid={loveMusic.fluid}
             />
           </Box>
