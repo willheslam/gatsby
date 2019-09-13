@@ -20,11 +20,17 @@ injectGlobal`
   a:hover {
     cursor: pointer;
   };
+  h1 {
+    font-size: 2.4em;
+  }
   h1, h2, h3, h4, h5, h6 {
     color: ${colors.secondary}
   };
   p {
-    color: ${colors.accent}
+    color: ${colors.accent};
+    font-family: 'roboto';
+    line-height: 1.5;
+    text-align: justify;
   }
 `;
 /* eslint-enable */

@@ -42,6 +42,11 @@ module.exports = {
             family: `Cinzel`,
             subsets: [`latin`],
             variants: [`400`, `700`]
+          },
+          {
+            family: `Roboto`,
+            subsets: [`latin`],
+            variants: [`400`, `700`]
           }
         ],
       },

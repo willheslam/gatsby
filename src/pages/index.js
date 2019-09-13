@@ -25,7 +25,7 @@ export default ({ data }) => {
   return (
     <PageWrapper>
       {/* this is the home page box with title and information */}
-      <Flex justifyContent="center">
+      <Flex justifyContent="center" align-items="center">
       <BackgroundImage
           Tag="section"
           className={imgStyle}
@@ -34,19 +34,20 @@ export default ({ data }) => {
           padding="20px"
         >
         <Box 
-          width={[1, '80%', '70%']}
-          bg="pink"
+          bg='#f1f1f0'
+          width={[1, '80%', '60%']}
           m={['3.5rem 0', '3.5rem 0', '5.5rem auto']}
           px={[3, 3, 5]}
+          py={[3, 3, 3]}
           color={colors.secondary}
           textAlign="center">
-          <h1>{myData.title}</h1>
+          <h1 className="title-beacons">{myData.title}</h1>
           <p>{myData.aboutText}</p>
         </Box>
         </BackgroundImage>
       </Flex>
 
-      <Box bg={colors.primary} pb={[4]}>
+      <Box bg={colors.secondary} pb={[0]}>
         <Flex justifyContent="center" wrap={['wrap', 'nowrap', 'nowrap']}>
           <Box m={[3]} width={[ "90px" , "130px", "130px"]}>
             <Img

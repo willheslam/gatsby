@@ -9,7 +9,8 @@ import media from '../../utils/media';
 
 const footerStyle = css`
   overflow: hidden;
-  padding: 2rem 0;
+  padding-left: 2rem;
+  padding-right: 2rem;
   background-color: ${colors.secondary};
   color: rgba(255, 255, 255, 0.5);
   text-align: center;
@@ -85,7 +86,7 @@ const svgStyles = css`
 
 const Footer = ({ name, facebook, instagram, twitter, email }) => (
   <div className={footerStyle}>
-    <Box width="1200px" m="0 auto" p={[3, 3, 4, 0]} align="left" color="white">
+    <Box width="1200px" m="0 auto" p={[3, 3, 4, 0]} align="left" color="#f1f1f0">
       <Flex wrap={['wrap', 'wrap', 'nowrap']} justifyContent="space-between">
         {/* <Box width={[1, 1, 1 / 3]}>
           <Wrapper>
