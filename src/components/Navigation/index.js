@@ -139,7 +139,8 @@ class Navigation extends Component {
           <ul>
             <div>
               <li>
-                <Link to="/">HOME</Link>
+                <Link to="/">HOME
+                </Link>
               </li>
               <li>
                 <Link to="/map">MAP</Link>

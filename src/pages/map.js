@@ -29,8 +29,8 @@ const Map = ({ data }) => {
             m={['3.5rem 0 0 0', '3.5rem 0 0 0', '3.5rem auto 0 auto']}
             px={[3, 3, 0]}
             color={colors.secondary}>
-            <h1>BEACONS</h1>
-            <h3>FOLKESTONE</h3>
+            <h1 className="title-beacons">BEACONS</h1>
+            <h3 className="title-beacons">FOLKESTONE</h3>
           </Box>
           <Box width={[1, 1, 1 / 4]}>
             <Buttons>

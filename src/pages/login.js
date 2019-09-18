@@ -1,10 +1,12 @@
 /* eslint-disable no-undef, react/prop-types */
 import React from 'react';
 import { graphql } from 'gatsby';
+import Link from 'gatsby-link';
 import Img from 'gatsby-image';
 import { css } from 'react-emotion';
 import { Box, Flex } from '../components/Layout';
 import PageWrapper from '../components/PageWrapper';
+import LoginForm from '../components/Login';
 import colors from '../utils/colors';
 import BackgroundImage from 'gatsby-background-image';
 import { ButtonSecondary } from '../components/Buttons';
@@ -13,14 +15,9 @@ const imgStyle = css`
   border-radius: 5px;
 `;
 
-const About = ({ data }) => {
+const Login = ({ data }) => {
   const myData = data.allContentJson.edges[0].node.index;
-  const imageData = data.about.childImageSharp;
   const mapData = data.map.childImageSharp;
-  const artCouncil = data.artCouncil.childImageSharp;
-  const kentCc = data.kentCc.childImageSharp;
-  const creativeF = data.creativeF.childImageSharp;
-  const loveMusic = data.loveMusic.childImageSharp;
   return (
     <PageWrapper>
       <BackgroundImage
@@ -40,52 +37,24 @@ const About = ({ data }) => {
           color={colors.secondary}
           textAlign="center">
           <h1>WELCOME!</h1>
-          <p>This will contain information about the benefits of making an account and how we will use their data etc...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <p>You can play Beacons annonymously, but if you would like to keep count of the gooseberries you find and be able to search across different devices, please make an account. With an acccount, we can also messgae you with secret hints and tips during the game. We take data protection very seriously, and will not pass on your data to any third parties.</p>
+          <h2>If you alredy have an account, please login below</h2>
+          <LoginForm></LoginForm>
+          
           <Box>
-          <ButtonSecondary>Make an account</ButtonSecondary>
-          <ButtonSecondary>Play Annonymously</ButtonSecondary>
+          <ButtonSecondary>
+            <li>
+              <Link to="/register-form">Make an account</Link>
+            </li>
+          </ButtonSecondary>
+          <ButtonSecondary>
+            <li>
+              <Link to="/map">Play Annonymously</Link>
+            </li>
+          </ButtonSecondary>
           </Box>
         </Box>
       </Flex>
-      <Box bg={colors.secondary} pb={[0]}>
-        <Flex justifyContent="center" wrap={['wrap', 'nowrap', 'nowrap']}>
-          <Box m={[3]} width={[ "90px" , "130px", "130px"]}>
-            <Img
-            className={imgStyle}
-            alt="Arts Council Logo"
-            fluid={artCouncil.fluid}
-            />
-          </Box>
-          <Box m={[3]} width={[ "90px" , "130px", "130px"]}>
-            <Img
-            className={imgStyle}
-            alt="kent County Council Logo"
-            fluid={kentCc.fluid}
-            />
-          </Box>
-          <Box m={[3]} width={[ "90px" , "130px", "130px"]}>
-            <Img
-            className={imgStyle}
-            alt="Folkestone Quaterhouse Logo"
-            fluid={creativeF.fluid}
-            />
-          </Box>
-          <Box m={[3]} width={[ "90px" , "130px", "130px"]}>
-            <Img
-            className={imgStyle}
-            alt="Love Music Help Muscians UK Logo"
-            fluid={loveMusic.fluid}
-            />
-          </Box>
-          <Box m={[3]} width={[ "90px" , "130px", "130px"]}>
-            <Img
-            className={imgStyle}
-            alt="Picture of X"
-            fluid={imageData.fluid}
-            />
-          </Box>
-        </Flex>
-      </Box>
       </BackgroundImage>
     </PageWrapper>
   );
@@ -93,42 +62,7 @@ const About = ({ data }) => {
 
 export const query = graphql`
 query {
-  about: file(relativePath: { eq: "about.jpg" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
   map: file(relativePath: { eq: "map.jpeg" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-  artCouncil: file(relativePath: { eq: "arts-council.png" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-  kentCc: file(relativePath: { eq: "kent-cc.png" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-  creativeF: file(relativePath: { eq: "folkestone-qh.jpeg" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-  loveMusic: file(relativePath: { eq: "love-music.jpeg" }) {
     childImageSharp {
       fluid(maxWidth: 1000) {
         ...GatsbyImageSharpFluid
@@ -148,4 +82,4 @@ query {
 }
 `;
 
-export default About;
+export default Login;
