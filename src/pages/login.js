@@ -39,7 +39,7 @@ const About = ({ data }) => {
           py={[3, 3, 3]}
           color={colors.secondary}
           textAlign="center">
-          <h1 className="title-beacons">WELCOME!</h1>
+          <h1>WELCOME!</h1>
           <p>This will contain information about the benefits of making an account and how we will use their data etc...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
           <Box>
           <ButtonSecondary>Make an account</ButtonSecondary>

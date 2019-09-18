@@ -44,6 +44,26 @@ module.exports = {
             variants: [`400`, `700`]
           },
           {
+            family: `Amatic SC`,
+            subsets: [`latin`],
+            variants: [`400`, `700`]
+          },
+          {
+            family: `Fredericka the Great`,
+            subsets: [`latin`],
+            variants: [`400`]
+          },
+          {
+            family: `IM Fell Great Primer`,
+            subsets: [`latin`],
+            variants: [`400`]
+          },
+          {
+            family: `IM Fell English`,
+            subsets: [`latin`],
+            variants: [`400`]
+          },
+          {
             family: `Roboto`,
             subsets: [`latin`],
             variants: [`400`, `700`]

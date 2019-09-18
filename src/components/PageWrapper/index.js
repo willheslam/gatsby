@@ -12,7 +12,7 @@ require('typeface-fredericka-the-great')
 import normalize from 'normalize.css';
 injectGlobal`
   * {
-      font-family: 'Amatic SC', serif;
+      font-family: 'IM Fell English', serif;
       box-sizing: border-box;
   };
   a {
@@ -26,14 +26,14 @@ injectGlobal`
     font-size: 2.4em;
   }
   h1.title-beacons {
-    font-family: 'Roboto', cursive;
+    font-family: 'Fredericka the Great', cursive;
   }
   h1, h2, h3, h4, h5, h6 {
     color: ${colors.secondary}
   };
   p {
     color: ${colors.accent};
-    font-family: 'Cinzel';
+    font-family: 'IM Fell Great Primer';
     line-height: 1.5;
     text-align: justify;
   }
