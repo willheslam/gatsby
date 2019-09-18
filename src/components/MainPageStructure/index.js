@@ -1,20 +1,18 @@
 /* eslint-disable no-undef, react/prop-types */
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { Box, Flex } from '../components/Layout';
 import PageWrapper from '../components/PageWrapper';
 import colors from '../utils/colors';
-import ButtonPrimary, { ButtonSecondary } from '../components/Buttons';
 import { css } from 'react-emotion';
 import BackgroundImage from 'gatsby-background-image';
-
 
 const imgStyle = css`
   border-radius: 5px;
 `;
 
-export default ({ data }) => {
+const MainPage = ({ data }) => {
   const myData = data.allContentJson.edges[0].node.index;
   const imageData = data.about.childImageSharp;
   const mapData = data.map.childImageSharp;
@@ -26,12 +24,12 @@ export default ({ data }) => {
     <PageWrapper>
       <Flex justifyContent="center" align-items="center">
         <BackgroundImage
-          Tag="section"
-          className={imgStyle}
-          fluid={mapData.fluid}
-          backgroundColor={`#FFFFFF`}
-          padding="20px"
-        >
+            Tag="section"
+            className={imgStyle}
+            fluid={mapData.fluid}
+            backgroundColor={`#FFFFFF`}
+            padding="20px"
+          >
           <Box 
             bg='#f1f1f0'
             width={[1, '80%', '60%']}
@@ -45,6 +43,7 @@ export default ({ data }) => {
           </Box>
         </BackgroundImage>
       </Flex>
+
       <Box bg={colors.secondary} pb={[0]}>
         <Flex justifyContent="center" wrap={['wrap', 'nowrap', 'nowrap']}>
           <Box m={[3]} width={[ "90px" , "130px", "130px"]}>
@@ -90,59 +89,59 @@ export default ({ data }) => {
 
 export const query = graphql`
 query {
-  about: file(relativePath: { eq: "about.jpg" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
+    about: file(relativePath: { eq: "about.jpg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    map: file(relativePath: { eq: "map.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    artCouncil: file(relativePath: { eq: "arts-council.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    kentCc: file(relativePath: { eq: "kent-cc.png" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    creativeF: file(relativePath: { eq: "folkestone-qh.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    loveMusic: file(relativePath: { eq: "love-music.jpeg" }) {
+      childImageSharp {
+        fluid(maxWidth: 1000) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+    allContentJson {
+          edges {
+              node {
+                  index {
+                      title
+                      aboutText
+                  }
+        }
       }
     }
   }
-  map: file(relativePath: { eq: "map.jpeg" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-  artCouncil: file(relativePath: { eq: "arts-council.png" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-  kentCc: file(relativePath: { eq: "kent-cc.png" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-  creativeF: file(relativePath: { eq: "folkestone-qh.jpeg" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-  loveMusic: file(relativePath: { eq: "love-music.jpeg" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
-  allContentJson {
-		edges {
-			node {
-				index {
-					title
-					aboutText
-				}
-      }
-    }
-  }
-}
-`;
+  `;
 
-// allContentJson - will query and array where there are multiple items. Any query not beginning with 'all' with query a single object
+export default MainPage;

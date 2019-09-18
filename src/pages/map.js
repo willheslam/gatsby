@@ -17,35 +17,29 @@ const Map = ({ data }) => {
   const mapImage = data.file.childImageSharp;
   return (
     <PageWrapper>
-      <Box bg={colors.primary}
-      >
-      <BackgroundImage
+      <Box bg={colors.primary}>
+        <BackgroundImage
           Tag="section"
           className={imgStyle}
           fluid={mapImage.fluid}
           backgroundSize='cover'
         >
-        <Box
-          width={[1, 1, 1 / 2]}
-          m={['3.5rem 0 0 0', '3.5rem 0 0 0', '3.5rem auto 0 auto']}
-          px={[3, 3, 0]}
-          color={colors.secondary}
-        >
-          <h1>BEACONS</h1>
-          <h3>FOLKESTONE</h3>
-        </Box>
-
-        <Box
-          width={[1, 1, 1 / 4]}
-        >
-          <Buttons>
-            <h5 class="button">Click for instructions</h5>
-          </Buttons>
-          <Buttons>
-            <h5 class="button">Show grid</h5>
-          </Buttons>
-        </Box>
-
+          <Box
+            width={[1, 1, 1 / 2]}
+            m={['3.5rem 0 0 0', '3.5rem 0 0 0', '3.5rem auto 0 auto']}
+            px={[3, 3, 0]}
+            color={colors.secondary}>
+            <h1>BEACONS</h1>
+            <h3>FOLKESTONE</h3>
+          </Box>
+          <Box width={[1, 1, 1 / 4]}>
+            <Buttons>
+              <h5 class="button">Click for instructions</h5>
+            </Buttons>
+            <Buttons>
+              <h5 class="button">Show grid</h5>
+            </Buttons>
+          </Box>
         </BackgroundImage>
       </Box>
     </PageWrapper>

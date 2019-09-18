@@ -1,20 +1,19 @@
 /* eslint-disable no-undef, react/prop-types */
 import React from 'react';
-import { Link, graphql } from 'gatsby';
+import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import { css } from 'react-emotion';
 import { Box, Flex } from '../components/Layout';
 import PageWrapper from '../components/PageWrapper';
 import colors from '../utils/colors';
-import ButtonPrimary, { ButtonSecondary } from '../components/Buttons';
-import { css } from 'react-emotion';
 import BackgroundImage from 'gatsby-background-image';
-
+import { ButtonSecondary } from '../components/Buttons';
 
 const imgStyle = css`
   border-radius: 5px;
 `;
 
-export default ({ data }) => {
+const About = ({ data }) => {
   const myData = data.allContentJson.edges[0].node.index;
   const imageData = data.about.childImageSharp;
   const mapData = data.map.childImageSharp;
@@ -24,26 +23,29 @@ export default ({ data }) => {
   const loveMusic = data.loveMusic.childImageSharp;
   return (
     <PageWrapper>
-      <Flex justifyContent="center" align-items="center">
-        <BackgroundImage
-          Tag="section"
-          className={imgStyle}
-          fluid={mapData.fluid}
-          backgroundColor={`#FFFFFF`}
-          padding="20px"
+      <BackgroundImage
+        Tag="section"
+        className={imgStyle}
+        fluid={mapData.fluid}
+        backgroundColor={`#FFFFFF`}
+        padding="20px"
         >
-          <Box 
-            bg='#f1f1f0'
-            width={[1, '80%', '60%']}
-            m={['3.5rem 0', '3.5rem 0', '5.5rem auto']}
-            px={[3, 3, 5]}
-            py={[3, 3, 3]}
-            color={colors.secondary}
-            textAlign="center">
-            <h1 className="title-beacons">{myData.title}</h1>
-            <p>{myData.aboutText}</p>
+      <Flex justifyContent="center" align-items="center">
+        <Box 
+          bg='#f1f1f0'
+          width={[1, '80%', '60%']}
+          m={['3.5rem 0', '3.5rem 0', '5.5rem auto']}
+          px={[3, 3, 5]}
+          py={[3, 3, 3]}
+          color={colors.secondary}
+          textAlign="center">
+          <h1 className="title-beacons">WELCOME!</h1>
+          <p>This will contain information about the benefits of making an account and how we will use their data etc...Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+          <Box>
+          <ButtonSecondary>Make an account</ButtonSecondary>
+          <ButtonSecondary>Play Annonymously</ButtonSecondary>
           </Box>
-        </BackgroundImage>
+        </Box>
       </Flex>
       <Box bg={colors.secondary} pb={[0]}>
         <Flex justifyContent="center" wrap={['wrap', 'nowrap', 'nowrap']}>
@@ -84,6 +86,7 @@ export default ({ data }) => {
           </Box>
         </Flex>
       </Box>
+      </BackgroundImage>
     </PageWrapper>
   );
 };
@@ -145,4 +148,4 @@ query {
 }
 `;
 
-// allContentJson - will query and array where there are multiple items. Any query not beginning with 'all' with query a single object
+export default About;

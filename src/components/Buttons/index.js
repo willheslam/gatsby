@@ -6,6 +6,13 @@ const buttonBasic = css`
   padding: 0.5rem 1.25rem;
   border-radius: 5px;
   border: 2px solid ${colors.secondary};
+  margin:10px
+`;
+
+const buttonBasicLogin = css`
+  padding: 0.75rem 1.25rem;
+  border-radius: 5px;
+  border: 2px solid ${colors.secondary};
 `;
 
 const buttonPrimary = css`
@@ -22,14 +29,15 @@ const buttonPrimary = css`
 `;
 
 const buttonSecondary = css`
-  ${buttonBasic};
-  background-color: transparent;
-  color: ${colors.secondary};
+  ${buttonBasicLogin};
+  background-color: ${colors.secondary};
+  color: ${colors.primary};
   transition: all 0.3s ease;
+  margin: 10px;
 
   &:hover {
-    background-color: ${colors.secondary};
-    color: ${colors.primary};
+    background-color: transparent;
+    color: ${colors.secondary};
     cursor: pointer;
   }
 `;

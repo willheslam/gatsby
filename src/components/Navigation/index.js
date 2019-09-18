@@ -139,19 +139,19 @@ class Navigation extends Component {
           <ul>
             <div>
               <li>
-                <Link to="/">Home</Link>
+                <Link to="/">HOME</Link>
               </li>
               <li>
-                <Link to="/map">Map</Link>
+                <Link to="/map">MAP</Link>
               </li>
               <li>
-                <Link to="/about">Login</Link>
+                <Link to="/login">LOGIN</Link>
               </li>
               <li>
-                <Link to="/blog">Register a find</Link>
+                <Link to="/register-find">REGISTER A FIND</Link>
               </li>
               <li>
-                <Link to="/contact-us">Contact us</Link>
+                <Link to="/contact">CONTACT US</Link>
               </li>
             </div>
           </ul>
@@ -180,7 +180,7 @@ class Navigation extends Component {
                   tabIndex="0"
                   onKeyPress={this.toggleNav}
                 >
-                  <Link to="/">Home</Link>
+                  <Link to="/">HOME</Link>
                 </div>
               </li>
               <li>
@@ -190,7 +190,7 @@ class Navigation extends Component {
                   tabIndex="-1"
                   onKeyPress={this.toggleNav}
                 >
-                  <Link to="/about">About</Link>
+                  <Link to="/map">MAP</Link>
                 </div>
               </li>
               <li>
@@ -200,7 +200,27 @@ class Navigation extends Component {
                   tabIndex="-1"
                   onKeyPress={this.toggleNav}
                 >
-                  <Link to="/blog">Blog</Link>
+                  <Link to="/login">LOGIN</Link>
+                </div>
+              </li>
+              <li>
+                <div
+                  onClick={this.toggleNav}
+                  role="button"
+                  tabIndex="-1"
+                  onKeyPress={this.toggleNav}
+                >
+                  <Link to="/register-find">REGISTER A FIND</Link>
+                </div>
+              </li>
+              <li>
+                <div
+                  onClick={this.toggleNav}
+                  role="button"
+                  tabIndex="-1"
+                  onKeyPress={this.toggleNav}
+                >
+                  <Link to="/contact">CONTACT US</Link>
                 </div>
               </li>
             </ul>
