@@ -38,8 +38,15 @@ injectGlobal`
     text-align: justify;
   }
   h5.button {
-      color: ${colors.primary}
-    }
+    color: ${colors.primary}
+  }
+  /* CSS for forms*/
+  input.form-field {
+    width: 50%;
+    padding: 7px;
+    margin: 10px;
+
+  }
 `;
 /* eslint-enable */
 

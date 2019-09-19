@@ -6,7 +6,7 @@ import Img from 'gatsby-image';
 import { css } from 'react-emotion';
 import { Box, Flex } from '../components/Layout';
 import PageWrapper from '../components/PageWrapper';
-import LoginForm from '../components/Login';
+import RegisterForm from '../components/Login';
 import colors from '../utils/colors';
 import BackgroundImage from 'gatsby-background-image';
 import { ButtonSecondary } from '../components/Buttons';
@@ -39,7 +39,7 @@ const Login = ({ data }) => {
           <h1>WELCOME!</h1>
           <p>You can play Beacons annonymously, but if you would like to keep count of the gooseberries you find and be able to search across different devices, please make an account. With an acccount, we can also messgae you with secret hints and tips during the game. We take data protection very seriously, and will not pass on your data to any third parties.</p>
           <h2>If you alredy have an account, please login below</h2>
-          <LoginForm></LoginForm>
+          <RegisterForm></RegisterForm>
           
           <Box>
           <ButtonSecondary>
