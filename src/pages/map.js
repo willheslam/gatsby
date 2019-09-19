@@ -48,7 +48,7 @@ const Map = ({ data }) => {
 
 export const query = graphql`
   query {
-    file(relativePath: { eq: "map.jpeg" }) {
+    file(relativePath: { eq: "map-with-roads.png" }) {
       childImageSharp {
         fluid(maxWidth: 1000) {
           ...GatsbyImageSharpFluid
