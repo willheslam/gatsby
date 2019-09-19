@@ -6,13 +6,20 @@ import Img from 'gatsby-image';
 import { css } from 'react-emotion';
 import { Box, Flex } from '../components/Layout';
 import PageWrapper from '../components/PageWrapper';
-import RegisterForm from '../components/Login';
 import colors from '../utils/colors';
 import BackgroundImage from 'gatsby-background-image';
 import { ButtonSecondary } from '../components/Buttons';
 
 const imgStyle = css`
   border-radius: 5px;
+`;
+
+const listStyle = css`
+  list-style-type: disc;
+  padding: 0;
+  list-style-position: inside;
+  padding-left: 10%;
+  text-align: left;
 `;
 
 const Login = ({ data }) => {
@@ -37,20 +44,26 @@ const Login = ({ data }) => {
           color={colors.secondary}
           textAlign="center">
           <h1>WELCOME!</h1>
-          <p>You can play Beacons annonymously, but if you would like to keep count of the gooseberries you find and be able to search across different devices, please make an account. With an acccount, we can also messgae you with secret hints and tips during the game. We take data protection very seriously, and will not pass on your data to any third parties.</p>
-          <h2>If you alredy have an account, please login below</h2>
-          <RegisterForm></RegisterForm>
-          
+          <p>Hello! Thanks for play testing Beacons with us. To help us develop the experience and to help you get the most out of it, we recommend that you log in. This will enable you to keep track of the gooseberry locations that you’ve found. If you give us your contact details we’ll be able to invite you to a celebration event at the end of the playtest, and also to get a sense of who is engaging with the project.</p>
+          <p>We will use this data to:</p>
+          <ul className={listStyle}>
+            <li>show you which gooseberries you have found</li>
+            <li>show our team which gooseberries have been found</li>
+            <li>send you an invitation to the event on 25th October</li>
+            <li>send you an email when the project launches in 2021</li>
+            <li>show our funders what postcode areas people live in who have taken part in the project (this will be completely anonymous).</li>
+          </ul>
+          <p>We won’t send you anything unconnected to Beacons, or share or sell your details. 
+          If you’d rather play anonymously, that’s also totally fine. </p>         
           <Box>
           <ButtonSecondary>
-            <li>
-              <Link to="/register-form">Make an account</Link>
-            </li>
+            <Link to="/register-form">Log on</Link>
           </ButtonSecondary>
           <ButtonSecondary>
-            <li>
-              <Link to="/map">Play Annonymously</Link>
-            </li>
+            <Link to="/register-form">Make an account</Link>
+          </ButtonSecondary>
+          <ButtonSecondary>
+            <Link to="/map">Play Annonymously</Link>
           </ButtonSecondary>
           </Box>
         </Box>

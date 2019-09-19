@@ -56,12 +56,12 @@ module.exports = {
           {
             family: `IM Fell Great Primer`,
             subsets: [`latin`],
-            variants: [`400`]
+            variants: [`400`, `400i`]
           },
           {
             family: `IM Fell English`,
             subsets: [`latin`],
-            variants: [`400`]
+            variants: [`400`, `400i`]
           },
           {
             family: `Roboto`,

@@ -34,8 +34,11 @@ injectGlobal`
   p {
     color: ${colors.accent};
     font-family: 'IM Fell Great Primer';
-    line-height: 1.5;
+    line-height: 1.2;
     text-align: justify;
+  }
+  p.italic {
+  font-style: italic;
   }
   h5.button {
     color: ${colors.primary}

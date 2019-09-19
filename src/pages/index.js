@@ -41,7 +41,11 @@ export default ({ data }) => {
             color={colors.secondary}
             textAlign="center">
             <h1 className="title-beacons">{myData.title}</h1>
-            <p>{myData.aboutText}</p>
+            <p>One hundred ancient sea gooseberries have washed ashore from the past and become scattered across the landscape. They have stories to tell and songs to sing, but first they need your help: can you help us find them, reunite them, and encourage them to reveal their secrets?</p>
+            <p>We are mounting a search, beginning on 17th October 2019, and we invite you to take part.</p>
+            <p className="italic">This is a playtest of what we hope will be a large scale event for Folkestone in Spring 2021. 
+              If you’d like to join us to help develop the work at this early stage, please email seagooseberries@gmail.com or log in to the website to begin your adventure. 
+              You can use the online map on this website and click the “instructions” tab, or contact us for a paper version of the map. </p>
           </Box>
         </BackgroundImage>
       </Flex>

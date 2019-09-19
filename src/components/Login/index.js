@@ -2,7 +2,7 @@ import React from 'react';
 import { Formik} from 'formik';
 import { ButtonSecondary } from '../Buttons';
 
-const RegisterForm = () => (
+const RegisterFormComponent = () => (
   <div>
   <Formik
     initialValues={{ name: '', password: '', email: '', postcode: '', phone: '' }}
@@ -24,6 +24,10 @@ const RegisterForm = () => (
     }}
     onSubmit={(values, { setSubmitting }) => {
       setTimeout(() => {
+        fetch('/beaconsproject.uk/api/', {
+          method: 'POST',
+          body: values,
+        });
         alert(JSON.stringify(values, null, 2));
         setSubmitting(false);
       }, 400);
@@ -34,6 +38,7 @@ const RegisterForm = () => (
       errors,
       touched,
       handleChange,
+      handleReset,
       handleBlur,
       handleSubmit,
       isSubmitting,
@@ -43,8 +48,8 @@ const RegisterForm = () => (
         <label>
         <input
           className="form-field"
-          placeholder="text"
-          type="name"
+          placeholder="name"
+          type="text"
           name="name"
           onChange={handleChange}
           onBlur={handleBlur}
@@ -79,8 +84,8 @@ const RegisterForm = () => (
         <label>
         <input
           className="form-field"
-          placeholder="text"
-          type="postcode"
+          placeholder="postcode"
+          type="text"
           name="postcode"
           onChange={handleChange}
           onBlur={handleBlur}
@@ -92,7 +97,7 @@ const RegisterForm = () => (
         <input
           className="form-field"
           placeholder="number"
-          type="phone"
+          type="text"
           name="phone"
           onChange={handleChange}
           onBlur={handleBlur}
@@ -109,4 +114,4 @@ const RegisterForm = () => (
 </div>
 );
 
-export default RegisterForm;
+export default RegisterFormComponent;
