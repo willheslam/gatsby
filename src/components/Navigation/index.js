@@ -5,6 +5,8 @@ import colors from '../../utils/colors';
 import MobileNav from './mobile';
 import media from '../../utils/media';
 import { Box } from '../Layout';
+import { graphql } from 'gatsby';
+import gooseberry from '../../assets/images/black-gooseberry.png'
 
 const basicNav = css`
   display: flex;
@@ -139,7 +141,9 @@ class Navigation extends Component {
           <ul>
             <div>
               <li>
-                <Link to="/">HOME
+                <Link to="/">
+                <img src={gooseberry} width="30px"/>
+                BEACONS
                 </Link>
               </li>
               <li>
@@ -231,5 +235,17 @@ class Navigation extends Component {
     );
   }
 }
+
+export const query = graphql`
+  query {
+    about: file(relativePath: { eq: "black-gooseberry.png" }) {
+      childImageSharp {
+        fixed(width: 20) {
+        ...GatsbyImageSharpFixed
+        }
+      }
+    }
+  }
+`;
 
 export default Navigation;
