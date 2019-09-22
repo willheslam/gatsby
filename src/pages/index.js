@@ -16,7 +16,6 @@ const imgStyle = css`
 
 export default ({ data }) => {
   const myData = data.allContentJson.edges[0].node.index;
-  const imageData = data.about.childImageSharp;
   const mapData = data.map.childImageSharp;
   const artCouncil = data.artCouncil.childImageSharp;
   const kentCc = data.kentCc.childImageSharp;
@@ -35,7 +34,7 @@ export default ({ data }) => {
           <Box 
             bg='#f1f1f0'
             width={[1, '80%', '60%']}
-            m={['3.5rem 0', '3.5rem 0', '5.5rem auto']}
+            m={['3.5rem auto', '5.5rem auto', '5.5rem auto']}
             px={[3, 3, 5]}
             py={[3, 3, 3]}
             color={colors.secondary}
@@ -50,40 +49,40 @@ export default ({ data }) => {
         </BackgroundImage>
       </Flex>
       <Box bg={colors.white} pb={[0]}>
-        <Flex justifyContent="center" wrap={['wrap', 'nowrap', 'nowrap']}>
-          <Box m={[3]} width={[ "90px" , "130px", "130px"]}>
+        <Flex align-items="center" justifyContent="center" wrap={['wrap', 'nowrap', 'nowrap']}>
+          <Box textAlign="center" m={[3]}>
             <Img
             className={imgStyle}
             alt="Arts Council Logo"
-            fluid={artCouncil.fluid}
+            fixed={artCouncil.fixed}
             />
           </Box>
-          <Box m={[3]} width={[ "90px" , "130px", "130px"]}>
+          <Box textAlign="center" m={[3]}>
             <Img
             className={imgStyle}
             alt="kent County Council Logo"
-            fluid={kentCc.fluid}
+            fixed={kentCc.fixed}
             />
           </Box>
-          <Box m={[3]} width={[ "90px" , "130px", "130px"]}>
+          <Box textAlign="center" m={[3]}>
             <Img
             className={imgStyle}
             alt="Folkestone Quaterhouse Logo"
-            fluid={creativeF.fluid}
+            fixed={creativeF.fixed}
             />
           </Box>
-          <Box m={[3]} width={[ "90px" , "130px", "130px"]}>
+          <Box textAlign="center" m={[3]}>
             <Img
             className={imgStyle}
             alt="Love Music Help Muscians UK Logo"
-            fluid={loveMusic.fluid}
+            fixed={loveMusic.fixed}
             />
           </Box>
-          <Box m={[3]} width={[ "90px" , "130px", "130px"]}>
+          <Box textAlign="center" m={[3]}>
             <Img
             className={imgStyle}
             alt="Picture of X"
-            fluid={imageData.fluid}
+            fixed={loveMusic.fixed}
             />
           </Box>
         </Flex>
@@ -93,45 +92,38 @@ export default ({ data }) => {
 };
 export const query = graphql`
 query {
-  about: file(relativePath: { eq: "about.jpg" }) {
-    childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
-      }
-    }
-  }
   map: file(relativePath: { eq: "map.jpeg" }) {
     childImageSharp {
-      fluid(maxWidth: 1000) {
+      fluid(maxWidth: 1500) {
         ...GatsbyImageSharpFluid
       }
     }
   }
   artCouncil: file(relativePath: { eq: "arts-council.png" }) {
     childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
+      fixed(height: 70) {
+        ...GatsbyImageSharpFixed
       }
     }
   }
   kentCc: file(relativePath: { eq: "kent-cc.png" }) {
     childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
+      fixed(height: 50) {
+        ...GatsbyImageSharpFixed
       }
     }
   }
   creativeF: file(relativePath: { eq: "folkestone-qh.jpeg" }) {
     childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
+      fixed(height: 30) {
+        ...GatsbyImageSharpFixed
       }
     }
   }
   loveMusic: file(relativePath: { eq: "love-music.jpeg" }) {
     childImageSharp {
-      fluid(maxWidth: 1000) {
-        ...GatsbyImageSharpFluid
+      fixed(height: 50) {
+        ...GatsbyImageSharpFixed
       }
     }
   }

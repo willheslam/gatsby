@@ -24,24 +24,25 @@ const outerStyle = css`
     z-index: 3;
 `;
 
+const textTitle = css`
+    position: absolute;
+    top: -480px;
+    left: -900px;
+    z-index: 3;
+`;
+
 const Map = ({ data }) => {
   const mapImage = data.map.childImageSharp;
   const about = data.about.childImageSharp;
+  const beaconsText = data.beaconsText.childImageSharp;
 
   return (
     <PageWrapper>
         <p>hello test</p>
         <div className={divStyle}>
-          <Img
-            className={innerStyle}
-            alt="big map"
-            fixed={mapImage.fixed}>    
-          </Img>
-          <Img
-            className={outerStyle}
-            alt="gooseberry"
-            fixed={about.fixed}>    
-          </Img>
+          <Img className={innerStyle} alt="big map" fixed={mapImage.fixed}></Img>
+          <Img className={outerStyle} alt="gooseberry" fixed={about.fixed}></Img>
+          <Img className={textTitle} alt="gooseberry" fixed={beaconsText.fixed}></Img>
         </div>
       <Box bg={colors.primary}>
           <Box
@@ -77,6 +78,13 @@ export const query = graphql`
     map: file(relativePath: { eq: "map-with-roads.png" }) {
       childImageSharp {
         fixed(width: 900) {
+        ...GatsbyImageSharpFixed
+        }
+      }
+    }
+    beaconsText: file(relativePath: { eq: "beacons-text-transparent.png" }) {
+      childImageSharp {
+        fixed(width: 200) {
         ...GatsbyImageSharpFixed
         }
       }

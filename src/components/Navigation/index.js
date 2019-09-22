@@ -143,7 +143,7 @@ class Navigation extends Component {
               <li>
                 <Link to="/">
                 <img src={gooseberry} width="30px"/>
-                BEACONS
+                HOME
                 </Link>
               </li>
               <li>
