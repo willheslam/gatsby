@@ -13,6 +13,7 @@ const divStyle = css`
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  
   position: relative;
 `;
 const mapStyle = css`
@@ -54,7 +55,7 @@ const Map = ({ data }) => {
 
   return (
     <PageWrapper>
-      <Box>
+      <Box bg={colors.primary}>
         <p>hello test</p>
         <div className={divStyle}>
           <Img
@@ -78,14 +79,6 @@ const Map = ({ data }) => {
           <Img className={mapStyle} alt="big map" fluid={mapImage.fluid} />
         </div>
         <Flex bg={colors.primary}>
-          <Box
-            width={[1, 1, 1 / 2]}
-            m={['3.5rem 0 0 0', '3.5rem 0 0 0', '3.5rem auto 0 auto']}
-            px={[3, 3, 0]}
-            color={colors.secondary}>
-            <h1 className="title-beacons">BEACONS</h1>
-            <h3 className="title-beacons">FOLKESTONE</h3>
-          </Box>
           <Box width={[1, 1, 1 / 4]}>
             <Buttons>
               <h5 className="button">Click for instructions</h5>

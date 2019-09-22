@@ -13,7 +13,6 @@ const footerStyle = css`
   padding-right: 2rem;
   background-color: ${colors.secondary};
   color: rgba(255, 255, 255, 0.5);
-  text-align: center;
 
   & img {
     display: block;
@@ -21,30 +20,6 @@ const footerStyle = css`
   }
   & p {
     color: rgba(255, 255, 255, 0.5);
-  }
-`;
-
-const ulStyle = css`
-  list-style-type: none;
-  margin: 0;
-  margin-bottom: 1.45rem;
-  text-transform: uppercase;
-  padding: 0;
-  & a {
-    cursor: pointer;
-    opacity: 0.5;
-    transition: opacity 0.15s ease-in;
-    transition: color 0.15s ease-in;
-
-    &:hover {
-      text-decoration: none;
-      box-shadow: none;
-      opacity: 1;
-      transition: opacity 0.15s ease-in;
-    }
-  }
-  & li {
-    margin: 0;
   }
 `;
 
@@ -60,7 +35,7 @@ const Wrapper = styled.div`
 
 const socialList = css`
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
   list-style-type: none;
   margin: 0;
   padding: 0;
@@ -70,6 +45,10 @@ const socialList = css`
     margin-left: auto;
   `};
 `;
+
+const socialItems = css`
+  margin-left: 15px;
+`
 
 const svgStyles = css`
   opacity: 0.5;
@@ -86,34 +65,12 @@ const svgStyles = css`
 
 const Footer = ({ name, facebook, instagram, twitter, email }) => (
   <div className={footerStyle}>
-    <Box width="1200px" m="0 auto" p={[3, 3, 4, 3]} align="left" color="#f1f1f0">
+    <Box width="100%" m="0 auto" p={[3, 3, 4, 3]} align="left" color="#f1f1f0">
       <Flex wrap={['wrap', 'wrap', 'nowrap']} justifyContent="space-between">
-        {/* <Box width={[1, 1, 1 / 3]}>
-          <Wrapper>
-            <div>
-              <p>{name}</p>
-            </div>
-          </Wrapper>
-        </Box> */}
-        <Box width={[1, 1, 1 / 3]}>
-          <Wrapper>
-            <ul className={ulStyle}>
-              <li>
-                <Link to="/">Home</Link>
-              </li>
-              <li>
-                <Link to="/privacy">Privacy Policy</Link>
-              </li>
-              <li>
-                <Link to="/terms">Terms of Service</Link>
-              </li>
-            </ul>
-          </Wrapper>
-        </Box>
-        <Box width={[1, 1, 1 / 3]}>
+        <Box width={[1, 1, 1]}>
           <Wrapper>
             <ul className={socialList}>
-              <li>
+              <li className={socialItems}>
                 <a
                   title="Link to our Facebook page"
                   href={facebook}
@@ -123,7 +80,7 @@ const Footer = ({ name, facebook, instagram, twitter, email }) => (
                   {feather('facebook', ['30', '30'], svgStyles)}
                 </a>
               </li>
-              <li>
+              <li className={socialItems}>
                 <a
                   title="Link to our Twitter account"
                   href={twitter}
@@ -133,7 +90,7 @@ const Footer = ({ name, facebook, instagram, twitter, email }) => (
                   {feather('twitter', ['30', '30'], svgStyles)}
                 </a>
               </li>
-              <li>
+              <li className={socialItems}>
                 <a
                   title="Link to out Instragram account"
                   href={instagram}
@@ -143,7 +100,7 @@ const Footer = ({ name, facebook, instagram, twitter, email }) => (
                   {feather('instagram', ['30', '30'], svgStyles)}
                 </a>
               </li>
-              <li>
+              <li className={socialItems}>
                 <a title="Our E-Mail address" href={`mailto:${email}`}>
                   {feather('mail', ['30', '30'], svgStyles)}
                 </a>
