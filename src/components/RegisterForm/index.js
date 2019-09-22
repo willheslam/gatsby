@@ -1,6 +1,7 @@
 import React from 'react';
 import { Formik} from 'formik';
 import { ButtonSecondary } from '../Buttons';
+import api from '../../utils/api';
 
 const RegisterFormComponent = () => (
   <div>
@@ -24,10 +25,7 @@ const RegisterFormComponent = () => (
     }}
     onSubmit={(values, { setSubmitting }) => {
       setTimeout(() => {
-        fetch('/beaconsproject.uk/api/', {
-          method: 'POST',
-          body: values,
-        });
+        api.register(values);
         alert(JSON.stringify(values, null, 2));
         setSubmitting(false);
       }, 400);
