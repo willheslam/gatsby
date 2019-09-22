@@ -45,9 +45,19 @@ injectGlobal`
   }
   /* CSS for forms*/
   input.form-field {
-    width: 50%;
+    width: 100%;
     padding: 7px;
     margin: 10px;
+    display: block;
+
+  }
+
+  label.form-field-label {
+    display: inline-block;
+    width: 100%;
+    padding: 7px;
+    margin: 10px;
+    text-align: right;
 
   }
 `;

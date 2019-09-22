@@ -57,7 +57,7 @@ const Login = ({ data }) => {
           If you’d rather play anonymously, that’s also totally fine. </p>         
           <Box>
           <ButtonSecondary>
-            <Link to="/register-form">Log on</Link>
+            <Link to="/login-form">Log on</Link>
           </ButtonSecondary>
           <ButtonSecondary>
             <Link to="/register-form">Make an account</Link>

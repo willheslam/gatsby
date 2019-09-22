@@ -7,13 +7,13 @@ import PageWrapper from '../components/PageWrapper';
 import colors from '../utils/colors';
 import BackgroundImage from 'gatsby-background-image';
 import { ButtonSecondary } from '../components/Buttons';
-import RegisterFormComponent from '../components/RegisterForm'
+import LoginFormComponent from '../components/LoginForm'
 
 const imgStyle = css`
   border-radius: 5px;
 `;
 
-const RegisterForm = ({ data }) => {
+const LoginForm = ({ data }) => {
   const myData = data.allContentJson.edges[0].node.index;
   const mapData = data.map.childImageSharp;
   return (
@@ -34,8 +34,8 @@ const RegisterForm = ({ data }) => {
           py={[3, 3, 3]}
           color={colors.secondary}
           textAlign="center">
-          <h1>REGISTER</h1>
-          <RegisterFormComponent></RegisterFormComponent>
+          <h1>LOGIN</h1>
+          <LoginFormComponent></LoginFormComponent>
         </Box>
       </Flex>
       </BackgroundImage>
@@ -65,4 +65,4 @@ query {
 }
 `;
 
-export default RegisterForm;
+export default LoginForm;
