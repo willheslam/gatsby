@@ -6,11 +6,11 @@ import { Box, Flex } from '../../components/Layout';
 const RegisterFindComponent = () => (
   <div>
   <Formik
-    initialValues={{ code: ''}}
+    initialValues={{ gooseberryCode: '', locationCode: ''}}
     validate={values => {
       let errors = {};
-      if (!values.code) {
-        errors.code = 'code is required';
+      if (!values.locationCode) {
+        errors.locationCode = 'please enter the location code';
       }
       return errors;
     }}
@@ -39,17 +39,29 @@ const RegisterFindComponent = () => (
       <form onSubmit={handleSubmit}>
         <Flex wrap={['wrap', 'wrap', 'wrap']}>
           <label className="form-field-label-code">
-          Please enter your Gooseberry or Location code
+          Please enter the Location code
           </label>
           <input
           className="form-field"
-          type="number"
-          name="code"
+          type="text"
+          name="locationCode"
           onChange={handleChange}
           onBlur={handleBlur}
-          value={values.code}
+          value={values.locationCode}
           />
-          {errors.code && touched.code && errors.code}
+          {errors.locationCode && touched.locationCode && errors.locationCode}
+          <label className="form-field-label-code">
+          Please enter the Gooseberry code
+          </label>
+          <input
+          className="form-field"
+          type="text"
+          name="gooseberryCode"
+          onChange={handleChange}
+          onBlur={handleBlur}
+          value={values.gooseberryCode}
+          />
+          {errors.gooseberryCode && touched.gooseberryCode && errors.gooseberryCode}
         </Flex>
       
       <Box width={[1, '100%', '100%']}>

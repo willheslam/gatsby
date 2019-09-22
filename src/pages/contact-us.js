@@ -54,6 +54,8 @@ const ContactUs = ({ data }) => {
         <p>is an engagement producer from Folkestone. Ruby is getting people involved and helping to locate the gooseberry hiding places. </p>
         <h3>Ellie Foreman</h3>
         <p>is a website developer based in Bristol, she did the front-end development for this website!</p>
+        <h3>Tarim</h3>
+        <p>creates magical tech and websites, and is based at Pervasive Media Studio in Bristol. He does all the behind the scenes technical work that helps the gooseberries work their magic.</p>
         </Box>
       </Flex>
       </BackgroundImage>
