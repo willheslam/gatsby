@@ -1,34 +1,51 @@
+
 /* eslint-disable no-undef, react/prop-types */
 import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import { css } from 'react-emotion';
-import { Box } from '../components/Layout';
+import { Box, Flex  } from '../components/Layout';
 import PageWrapper from '../components/PageWrapper';
 import colors from '../utils/colors';
 import BackgroundImage from 'gatsby-background-image';
 import Buttons from '../components/Buttons'
 
 const divStyle = css`
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
-  `;
-  
-const innerStyle = css`
+`;
+const mapStyle = css`
   z-index: 1;
 `;
 
-const outerStyle = css`
-    position: absolute;
-    top: -300px;
-    left: -400px;
-    z-index: 3;
+const gooseberryStyle = css`
+  position: absolute !important;
+  z-index: 3;
+  transform: translate(-50%, -50%);
 `;
 
+const gooseberries = [
+  {
+    id: 'foo',
+    top: '30%',
+    left: '50%',
+    found: false
+  },
+  {
+    id: 'bar',
+    top: '20%',
+    left: '20%',
+    found: true
+  }
+];
+
 const textTitle = css`
-    position: absolute;
-    top: -480px;
-    left: -900px;
-    z-index: 3;
+  position: absolute !important;
+  top: 10px;
+  left: 10px;
+  z-index: 3;
 `;
 
 const Map = ({ data }) => {
@@ -38,13 +55,30 @@ const Map = ({ data }) => {
 
   return (
     <PageWrapper>
+      <Box>
         <p>hello test</p>
         <div className={divStyle}>
-          <Img className={innerStyle} alt="big map" fixed={mapImage.fixed}></Img>
-          <Img className={outerStyle} alt="gooseberry" fixed={about.fixed}></Img>
-          <Img className={textTitle} alt="gooseberry" fixed={beaconsText.fixed}></Img>
+          <Img
+            className={textTitle}
+            alt="gooseberry"
+            fixed={beaconsText.fixed}
+          />
+          {gooseberries.map(gooseberry => (
+            <Img
+              key={gooseberry.id}
+              className={gooseberryStyle}
+              alt="gooseberry"
+              fixed={about.fixed}
+              style={{
+                top: gooseberry.top,
+                left: gooseberry.left,
+                filter: gooseberry.found ? `sepia(1) hue-rotate(30deg)` : ``
+              }}
+            />
+          ))}
+          <Img className={mapStyle} alt="big map" fluid={mapImage.fluid} />
         </div>
-      <Box bg={colors.primary}>
+        <Flex bg={colors.primary}>
           <Box
             width={[1, 1, 1 / 2]}
             m={['3.5rem 0 0 0', '3.5rem 0 0 0', '3.5rem auto 0 auto']}
@@ -55,12 +89,13 @@ const Map = ({ data }) => {
           </Box>
           <Box width={[1, 1, 1 / 4]}>
             <Buttons>
-              <h5 class="button">Click for instructions</h5>
+              <h5 className="button">Click for instructions</h5>
             </Buttons>
             <Buttons>
-              <h5 class="button">Show grid</h5>
+              <h5 className="button">Show grid</h5>
             </Buttons>
           </Box>
+        </Flex>
       </Box>
     </PageWrapper>
   );
@@ -77,8 +112,8 @@ export const query = graphql`
     }
     map: file(relativePath: { eq: "map-with-roads.png" }) {
       childImageSharp {
-        fixed(width: 900) {
-        ...GatsbyImageSharpFixed
+        fluid(maxWidth: 1200) {
+        ...GatsbyImageSharpFluid
         }
       }
     }

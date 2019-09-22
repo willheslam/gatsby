@@ -105,7 +105,7 @@ const RegisterFormComponent = () => (
         />
         </label>
         {errors.phone && touched.phone && errors.phone}
-        <ButtonSecondary classname="submit-button" type="submit" disabled={isSubmitting}>
+        <ButtonSecondary className="submit-button" type="submit" disabled={isSubmitting}>
           Submit
         </ButtonSecondary>
       </form>

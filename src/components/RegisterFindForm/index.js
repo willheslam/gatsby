@@ -53,7 +53,7 @@ const RegisterFindComponent = () => (
         </Flex>
       
       <Box width={[1, '100%', '100%']}>
-        <ButtonSecondary classname="submit-button" type="submit" disabled={isSubmitting}>
+        <ButtonSecondary className="submit-button" type="submit" disabled={isSubmitting}>
           Submit
         </ButtonSecondary>
       </Box>
