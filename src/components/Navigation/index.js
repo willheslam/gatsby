@@ -156,7 +156,7 @@ class Navigation extends Component {
                 <Link to="/register-find">REGISTER A FIND</Link>
               </li>
               <li>
-                <Link to="/contact">CONTACT US</Link>
+                <Link to="/contact-us">CONTACT US</Link>
               </li>
             </div>
           </ul>
@@ -225,7 +225,7 @@ class Navigation extends Component {
                   tabIndex="-1"
                   onKeyPress={this.toggleNav}
                 >
-                  <Link to="/contact">CONTACT US</Link>
+                  <Link to="/contact-us">CONTACT US</Link>
                 </div>
               </li>
             </ul>
