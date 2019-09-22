@@ -7,7 +7,7 @@ import { Box, Flex } from '../components/Layout';
 import PageWrapper from '../components/PageWrapper';
 import colors from '../utils/colors';
 import BackgroundImage from 'gatsby-background-image';
-import { ButtonSecondary } from '../components/Buttons';
+import RegisterFindComponent from '../components/RegisterFindForm'
 
 const imgStyle = css`
   border-radius: 5px;
@@ -34,11 +34,7 @@ const RegisterFind = ({ data }) => {
             color={colors.secondary}
             textAlign="center">
             <h1>CONGRATULATIONS!</h1>
-            <p>Well done for finding</p>
-            <Box>
-            <ButtonSecondary>Make an account</ButtonSecondary>
-            <ButtonSecondary>Play Annonymously</ButtonSecondary>
-            </Box>
+            <RegisterFindComponent></RegisterFindComponent>
           </Box>
         </Flex>
       </BackgroundImage>

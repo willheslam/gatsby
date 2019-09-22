@@ -43,7 +43,9 @@ injectGlobal`
   h5.button {
     color: ${colors.primary}
   }
-  /* CSS for forms*/
+
+  /* CSS FOR FORMS*/
+  /* generic forms*/
   input.form-field {
     width: 100%;
     padding: 7px;
@@ -58,7 +60,20 @@ injectGlobal`
     padding: 7px;
     margin: 10px;
     text-align: right;
+  }
 
+  /* Found location of gooseberry forms*/
+  label.form-field-label-code {
+    width: 100%;
+    padding: 7px;
+    margin: 10px;
+    text-align: center;
+  }
+
+  input.form-field-code {
+    width: 250px;
+    padding: 7px;
+    margin: 10px;
   }
 `;
 /* eslint-enable */
